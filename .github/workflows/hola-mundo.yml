@@ -1,0 +1,25 @@
+name: Ejecutar Hola Mundo  # Nombre del flujo de trabajo
+run-name: Aprendiendo Git Actions.
+on:
+  push:
+    branches:
+      - main  # Activar el flujo cuando se haga un push a la rama principal
+
+jobs:
+  ejecutar_hola_mundo:  # Nombre del trabajo
+    runs-on: ubuntu-latest  # Se ejecutará en una máquina con Ubuntu
+
+    steps:  # Lista de pasos a seguir
+      - name: Checkout del código  # Paso: Hacer checkout del código del repositorio
+        uses: actions/checkout@v2
+
+      - name: Instalar Node.js  # Paso: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14  # Seleccionar la versión de Node.js
+
+      - name: Instalar dependencias  # Paso: Instalar las dependencias del proyecto
+        run: npm install  # Ejecutar el comando 'npm install'
+
+      - name: Ejecutar Hola Mundo  # Paso: Ejecutar el archivo Hola_Mundo.js
+        run: node Hola_Mundo.js  # Ejecutar el comando 'node Hola_Mundo.js'
