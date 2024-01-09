@@ -1,0 +1,32 @@
+name: Triggers
+run-name: Clase 6 eventos->Workflow
+on:
+  push: #PUSH
+    branches: ['aprendiendo-**']
+    paths: ['**.yml']
+
+  schedule: #SCHEDULE
+   - cron: '00 11 * 2 6'
+jobs:
+  job-t:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar Repo en el Runner
+        uses: actions/checkout@v4
+        
+      - name: Instalar Node.js  # Paso: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14  # Seleccionar la versión de Node.js
+          
+      - name: Instalar dependencias  # Paso: Instalar las dependencias del proyecto
+        run: npm install  # Ejecutar el comando 'npm install' 
+      
+      - name: Run multi-line script
+        run: |
+          echo "Hello from IP: ${{ steps.ip.outputs.ipv4 }}"
+    
+    
+          
+  
+    
