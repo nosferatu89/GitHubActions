@@ -1,16 +1,16 @@
 name: Expression
 on:
   workflow_dispatch:
-		inputs:
-			edad:
-				description: 'Edad'
-				required: true
-				type: integer
-			nombre:
-				description: 'Tu nombre'
-				required: true
-				default: 'NN'
-				type: string
+    inputs:
+	edad:
+	  description: 'Edad'
+	  required: true
+	  type: integer
+	nombre:
+	  description: 'Tu nombre'
+	  required: true
+	  default: 'NN'
+	  type: string
 jobs:
 	mayor:
 		if: ${{ inputs.edad >= 18 }}
