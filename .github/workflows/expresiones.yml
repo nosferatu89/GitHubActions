@@ -13,7 +13,7 @@ on:
       type: string
 jobs:
   mayor: null
-    if: ${{ inputs.edad >= 18 }}
+    if:${{ inputs.edad >= 18 }}
   runs-on: ubuntu-latest
   steps:
     - name: Correr script
