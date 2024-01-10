@@ -1,0 +1,9 @@
+name: contextos
+run-name: Ejecutando practica de contextos
+on: push #push
+jobs:
+  check-branch:
+    if: ${{github.ref == '**/aprendiendo**'
+    runs-on: ubuntu-lastest
+    steps:
+      - run: echo "Desplegando en la rama $GITHUB_REF
