@@ -1,6 +1,6 @@
 name: Expression
 on:
-	workflow_dispatch:
+  workflow_dispatch:
 		inputs:
 			edad:
 				description: 'Edad'
