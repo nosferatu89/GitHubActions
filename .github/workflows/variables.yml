@@ -14,10 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       Broma: ' y las perras en el medio'
-    if: ${{Hola_Juan == 'Hola Juan' && Hola_Pedro == 'Hola Pedro' }}
+    if: ${{ env.Hola_Juan == 'Hola Juan' && env.Hola_Pedro == 'Hola Pedro' }}
     steps:
       - name: Imprimir Broma
         run: echo "${{ env.Hola_Juan }}, ${{ env.Hola_Pedro }}, ${{ env.Broma }}"
-
-    
-    
