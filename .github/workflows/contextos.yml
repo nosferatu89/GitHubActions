@@ -1,0 +1,14 @@
+name: contextos
+run-name: Aprendiendo contextos
+on:
+  push:
+    branches:
+      - 'aprendiendo-github-actions' # Corregido: branches debe ser una lista
+
+jobs:
+  check-main:
+    if: ${{ github.ref != 'refs/heads/main' }}
+    runs-on: ubuntu-latest # Corregido: 'lastest' -> 'latest'
+    steps:
+      - name: Desplegar en la rama
+        run: echo "Desplegando en la rama $GITHUB_REF"

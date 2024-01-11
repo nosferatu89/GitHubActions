@@ -1,0 +1,19 @@
+name: Aplicando variables de entorno
+run-name: aprendiendo a usar variables de entorno
+on:
+  push:
+    branches:
+      - aprendiendo-github-actions
+
+env:
+  Hola_Juan: 'Hola Juan'
+  Hola_Pedro: 'Hola Pedro'
+
+jobs:
+  Realizar_Broma:
+    runs-on: ubuntu-latest
+    env:
+      Broma: ' y las perras en el medio'
+    steps:
+      - name: Imprimir Broma
+        run: echo "${{ env.Hola_Juan }}, ${{ env.Hola_Pedro }}, ${{ env.Broma }}"
